@@ -1,7 +1,6 @@
 *.iml
 .gradle
-HW1/
-gradle/
+.HW1
 /local.properties
 /.idea/caches
 /.idea/libraries
