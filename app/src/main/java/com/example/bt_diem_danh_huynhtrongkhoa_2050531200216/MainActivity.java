@@ -2,6 +2,7 @@ package com.example.bt_diem_danh_huynhtrongkhoa_2050531200216;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mobile;
     private TextView add;
     private TextView postal;
-    private TextView pass;
+    private TextView email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,15 +25,44 @@ public class MainActivity extends AppCompatActivity {
         mobile = findViewById(R.id.editTextTextPersonName_mobile);
         add = findViewById(R.id.editTextTextPersonName_address);
         postal = findViewById(R.id.editTextTextPersonName_postalCode);
-        pass = findViewById(R.id.editTextTextPersonName_password);
+        email = findViewById(R.id.editTextTextPersonName_email);
 
         huy = findViewById(R.id.button_huy);
         nhap = findViewById(R.id.button_nhap);
         huy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                open(textView.getText().toString());
+                clear();
             }
         });
+        nhap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openPrf(name.getText().toString(),mobile.getText().toString(),add.getText().toString(),postal.getText().toString(),email.getText().toString());
+            }
+        });
+    }
+    public void openPrf(String name,String mobile,String add,String postal,String email){
+        Intent intent = new Intent(this,prf.class);
+
+        Bundle bundle = new Bundle();
+
+        bundle.putString("name", name);
+        bundle.putString("mobile", mobile);
+        bundle.putString("add", add);
+        bundle.putString("postal", postal);
+        bundle.putString("email", email);
+
+
+        intent.putExtras(bundle);
+
+        startActivity(intent);
+    }
+    public void clear(){
+        name.setText("");
+        email.setText("");
+        mobile.setText("");
+        add.setText("");
+        postal.setText("");
     }
 }

@@ -189,22 +189,22 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView_pass"
+                android:id="@+id/textView_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="PassWord"
+                android:text="Email"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName_password"
+                android:id="@+id/editTextTextPersonName_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Password"
+                android:hint="Email"
                 android:inputType="textPersonName" />
 
         </LinearLayout>
